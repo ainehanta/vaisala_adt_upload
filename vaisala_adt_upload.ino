@@ -70,18 +70,6 @@ void disable_debug()
   debug = 0;
 }
 
-float calc_vpd(float rh, float temp) {
-  // Sonntag's Equation
-  temp += 273.15; // Celsius -> Kelvin
-  float a = -6096.9385 / temp;
-  const float b = 16.635794;
-  float c = -2.711193 / 100 * temp;
-  float d = 1.673952 / 100000 * temp * temp;
-  float e = 2.433502 * log(temp);
-  float svp = exp(a+b+c+d+e) * 100; // exp(a+b+c+d+e) [hPa] -> [Pa]
-  return (svp - svp * (rh / 100)) / 1000; // (svp - svp * (rh / 100)) [Pa] -> [kPa]
-}
-
 void setup()
 {
   int ret;
