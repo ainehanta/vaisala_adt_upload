@@ -30,7 +30,7 @@ IPAddressEntry dns_server("DNS", "8.8.8.8", "dns server");
 //  ntp
 StringEntry    ntp("NTP", "ntp.nict.jp", "ntp server");
 //  fiap
-StringEntry    host("HOST", "fiap-dev.gutp.ic.i.u-tokyo.ac.jp", "host of ieee1888 server end point");
+StringEntry    host("HOST", "202.15.110.21", "host of ieee1888 server end point");
 IntegerEntry   port("PORT", "80", "port of ieee1888 server end point");
 StringEntry    path("PATH", "/axis2/services/FIAPStorage", "path of ieee1888 server end point");
 StringEntry    prefix("PREFIX", "http://j.kisarazu.ac.jp/Test/VAISALA01/", "prefix of point id");
@@ -119,7 +119,7 @@ void setup()
   Wire.begin();
   tempsensor.begin(0x48);
 
-  Serial2.begin(9600, SERIAL_7E1);
+  Serial2.begin(4800, SERIAL_7E1);
   vaisala.begin();
 }
 
